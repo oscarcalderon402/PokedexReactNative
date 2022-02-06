@@ -15,7 +15,7 @@ export default function PokemonCard(props) {
 
   const pokemonColor = getColorByPokemonType(pokemon.type);
   const bgStyles = { backgroundColor: pokemonColor, ...styles.bgStyles };
-  console.log(pokemonColor);
+
   const goToPokemon = () => {
     console.log(`Vamos al pokemon: ${pokemon.name}`);
     console.log(pokemon);
