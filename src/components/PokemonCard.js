@@ -4,21 +4,22 @@ import {
   Text,
   Image,
   TouchableWithoutFeedback,
-} from 'react-native';
+} from "react-native";
 
-import React from 'react';
-import { capitalize } from 'lodash';
-import getColorByPokemonType from '../utils/getColorByPokemonType';
+import React from "react";
+import { capitalize } from "lodash";
+import { useNavigation } from "@react-navigation/native";
+import getColorByPokemonType from "../utils/getColorByPokemonType";
 
 export default function PokemonCard(props) {
   const { pokemon } = props;
+  const navigation = useNavigation();
 
   const pokemonColor = getColorByPokemonType(pokemon.type);
   const bgStyles = { backgroundColor: pokemonColor, ...styles.bgStyles };
 
   const goToPokemon = () => {
-    console.log(`Vamos al pokemon: ${pokemon.name}`);
-    console.log(pokemon);
+    navigation.navigate("Pokemon", { id: pokemon.id });
   };
 
   return (
@@ -53,19 +54,19 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   number: {
-    position: 'absolute',
+    position: "absolute",
     right: 10,
     top: 10,
-    color: '#fff',
+    color: "#fff",
     fontSize: 11,
   },
   name: {
-    color: '#fff',
-    fontWeight: 'bold',
+    color: "#fff",
+    fontWeight: "bold",
     fontSize: 15,
   },
   image: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 2,
     right: 2,
     width: 90,
