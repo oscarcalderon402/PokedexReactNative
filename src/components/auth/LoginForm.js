@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { user, userDetails } from '../../utils/userDB';
+import useAuth from '../../hooks/useAuth';
 
 export default function LoginForm() {
   const [error, setError] = useState('');
+  const { login, auth } = useAuth();
 
   const formik = useFormik({
     initialValues,
@@ -17,7 +19,9 @@ export default function LoginForm() {
       if (username !== user.username || password !== user.password) {
         setError('Usuario o Contrasena incorrecto');
       } else {
-        console.log('Login correcto');
+        console.log(userDetails);
+        login(userDetails);
+        console.log(auth);
       }
     },
   });
