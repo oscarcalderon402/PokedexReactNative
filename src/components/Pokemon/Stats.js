@@ -1,12 +1,12 @@
-import React from "react";
-import { StyleSheet, View, Text } from "react-native";
-import { map, capitalize } from "lodash";
+import React from 'react';
+import { StyleSheet, View, Text } from 'react-native';
+import { map, capitalize } from 'lodash';
 
 export default function Stats(props) {
   const { stats } = props;
 
   const barStyles = (num) => {
-    const color = num > 49 ? "#00ac17" : "#ff3e3e";
+    const color = num > 49 ? '#00ac17' : '#ff3e3e';
     return {
       backgroundColor: color,
       width: `${num}%`,
@@ -35,40 +35,39 @@ export default function Stats(props) {
 const styles = StyleSheet.create({
   content: {
     paddingHorizontal: 20,
-    marginTop: 40,
     marginBottom: 80,
   },
   title: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     paddingTop: 20,
   },
   block: {
-    flexDirection: "row",
+    flexDirection: 'row',
     paddingVertical: 5,
   },
   blockTitle: {
-    width: "30%",
+    width: '30%',
   },
   statName: {
     fontSize: 12,
-    color: "#6b6b6b",
+    color: '#6b6b6b',
   },
   blockInfo: {
-    width: "70%",
-    flexDirection: "row",
-    alignItems: "center",
+    width: '70%',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   number: {
-    width: "12%",
+    width: '12%',
     fontSize: 12,
   },
   bgBar: {
-    backgroundColor: "#dedede",
-    width: "88%",
+    backgroundColor: '#dedede',
+    width: '88%',
     height: 5,
     borderRadius: 20,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   bar: {
     height: 5,
