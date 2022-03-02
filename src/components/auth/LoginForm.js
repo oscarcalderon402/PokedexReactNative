@@ -19,9 +19,7 @@ export default function LoginForm() {
       if (username !== user.username || password !== user.password) {
         setError('Usuario o Contrasena incorrecto');
       } else {
-        console.log(userDetails);
         login(userDetails);
-        console.log(auth);
       }
     },
   });
